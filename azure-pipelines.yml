@@ -23,7 +23,7 @@ stages:
         provider: 'azurerm'
         command: 'init'
         workingDirectory: 'parent'
-        backendServiceArm: 'aap1'
+        backendServiceArm: 'aap'
         backendAzureRmResourceGroupName: 'rg_practice'
         backendAzureRmStorageAccountName: 'storageassig1912'
         backendAzureRmContainerName: 'blobcon'
