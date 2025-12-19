@@ -25,7 +25,7 @@ variable "subnet_name" {
 
 variable "subnet_prefix" {
   type    = string
-  default = "10.0.1.0/27"
+  default = "10.0.0.0/27"
 }
 
 variable "nic_name" {
