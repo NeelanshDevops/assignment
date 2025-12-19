@@ -1,0 +1,31 @@
+trigger:
+- main
+
+pool:
+  name: myagent
+
+stages:
+- stage: plan_stage
+  displayName: Terraform Plan Stage
+  jobs:
+  - job: plan
+    displayName: Terraform Init
+    steps:
+
+    - task: TerraformInstaller@1
+      displayName: Install Terraform
+      inputs:
+        terraformVersion: '1.6.6'
+
+    - task: TerraformTask@5
+      displayName: Terraform Init
+      inputs:
+        provider: 'azurerm'
+        command: 'init'
+        workingDirectory: 'parent'
+        backendServiceArm: 'aap1'
+        backendAzureRmResourceGroupName: 'rg_practice'
+        backendAzureRmStorageAccountName: 'storageassig1912'
+        backendAzureRmContainerName: 'blobcon'
+        backendAzureRmKey: 'neelterraform.tfstate'
+
